@@ -6,7 +6,7 @@ use warnings;
 use Test::More tests => 4;
 use Test::Exception;
 
-local $TODO = 'higher-order unfinished';
+local $TODO = 'higher-order is unfinished';
 
 #
 # Examples from "Contracts for Higher-Order Functions" by Robert Bruce Findler
@@ -31,13 +31,13 @@ my @lines = map { __LINE__ + $_ } 4, 5, 6, 9;
 
 sub make_contract {
     my ($name) = @_;
-    precondition $name => sub {    # 0
-        precondition $_[0] => sub { is_greater_than_nine( $_[0] ) };    # 1
-        postcondition $_[0] =>                                          # 2
+    precondition $name => sub {    # $lines[0]
+        precondition $_[0] => sub { is_greater_than_nine( $_[0] ) };    # $lines[1]
+        postcondition $_[0] =>                                          # $lines[2]
             sub { is_between_zero_and_ninety_nine( $_[0] ) };
     };
     postcondition $name =>
-        sub { is_between_zero_and_ninety_nine(result) };                # 3
+        sub { is_between_zero_and_ninety_nine(result) };                # $lines[3]
 }
 
 # "At the point when g invokes f, the is_greater_than_nine portion of g's

@@ -6,6 +6,11 @@ use warnings;
 use Test::More tests => 4;
 use Test::Exception;
 
+#
+# Adding prototypes to the keywords makes it hard to use helper functions or
+# generators for the assertions.
+# 
+
 {
 
     package Camel;

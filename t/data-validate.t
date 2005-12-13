@@ -27,7 +27,8 @@ plan $@
 
     package Camel;
     use Class::Agreement;
-    use Data::Validate qw(:math :string);
+    require Data::Validate;
+    import Data::Validate qw(:math :string);
 
     precondition foo => sub { is_integer( $_[1] ) };
     precondition bar => sub { is_greater_than( $_[1], 0 ) };

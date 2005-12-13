@@ -3,7 +3,7 @@ package Class::Agreement;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Carp;
 use Class::Inspector;
@@ -1244,7 +1244,7 @@ argument passed to them must be greater than zero:
 
 =head1 AUTHOR
 
-Ian Langworth, C<< <langworth.com> >>
+Ian Langworth, C<< <ian@cpan.org> >>
 
 =head1 BUGS
 
